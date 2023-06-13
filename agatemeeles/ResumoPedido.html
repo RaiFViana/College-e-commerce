@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/ResumoPedido.css">
+    <title>Resumo de Pedido</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Resumo de Pedido</h2>
+
+        <div class="order-summary">
+            <?php
+        // Conexão com o banco de dados
+        $conn = mysqli_connect("localhost", "usuario", "senha", "nome_do_banco");
+
+        // Consulta para recuperar os produtos do banco de dados
+        $query = "SELECT * FROM produtos";
+        $result = mysqli_query($conn, $query);
+
+        // Loop para exibir os produtos
+        while ($row = mysqli_fetch_assoc($result)) {
+          $nome = $row['nome'];
+          $preco = $row['preco'];
+          $quantidade = $row['quantidade'];
+
+          echo "<h3>$nome</h3>";
+          echo "<p>Preço: R$ $preco</p>";
+          echo "<p>Quantidade: $quantidade</p>";
+          echo "<hr>";
+        }
+
+        // Total do pedido
+        $totalQuery = "SELECT SUM(preco * quantidade) AS total FROM produtos";
+        $totalResult = mysqli_query($conn, $totalQuery);
+        $totalRow = mysqli_fetch_assoc($totalResult);
+        $total = $totalRow['total'];
+
+        echo "<div class='total-amount'>";
+        echo "<p>Total: R$ $total</p>";
+        echo "</div>";
+
+        // Fechar a conexão com o banco de dados
+        mysqli_close($conn);
+      ?>
+        </div>
+
+        <div class="payment-options">
+            <label>Método de Pagamento:</label>
+            <input type="radio" name="payment" value="cartao"> Cartão
+            <input type="radio" name="payment" value="pix"> Pix
+            <input type="radio" name="payment" value="boleto"> Boleto
+        </div>
+
+        <div class="address-section">
+            <label>Endereço de Entrega:</label>
+            <div class="address-selection">
+                <input type="radio" name="address" value="endereco1" checked> Endereço 1
+                <input type="radio" name="address" value="endereco2"> Endereço 2
+            </div>
+            <div class="address-details">
+                <p>Nome: John Doe</p>
+                <p>Endereço: Rua Exemplo, 123</p>
+                <p>Cidade: Exemplolandia</p>
+                <p>CEP: 12345-678</p>
+                <p>País: Brasil</p>
+                <p>Telefone: (12) 3456-7890</p>
+            </div>
+            <div class="change-address">
+                <a href="#">Alterar</a>
+            </div>
+        </div>
+
+        <div class="register-address">
+            <a href="#">Registrar Novo Endereço</a>
+        </div>
+
+        <a href="#" class="back-button">Voltar</a>
+        <a href="#" class="checkout-button">Finalizar Compra</a>
+    </div>
+</body>
+
+</html>

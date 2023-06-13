@@ -1,0 +1,44 @@
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f5f0e6; /* Bege */
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #8b0000; /* Vermelho queimado */
+    }
+
+    .container input[type="text"],
+    .container input[type="number"],
+    .container input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #ffa500; /* Laranja */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container input[type="submit"]:hover {
+      background-color: #ff8c00; /* Laranja mais escuro */
+    }
+

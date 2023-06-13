@@ -1,0 +1,97 @@
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f0e6; /* Beje */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #8b0000; /* Vermelho queimado */
+    }
+
+    .order-summary {
+      margin-bottom: 20px;
+    }
+
+    .order-summary h3 {
+      margin-bottom: 10px;
+    }
+
+    .order-summary p {
+      margin: 0;
+    }
+
+    .total-amount {
+      text-align: right;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .payment-options {
+      margin-bottom: 20px;
+    }
+
+    .payment-options label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .address-section {
+      margin-bottom: 20px;
+    }
+
+    .address-section label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .address-section p {
+      margin: 0;
+    }
+
+    .change-address,
+    .register-address {
+      text-align: right;
+    }
+
+    .back-button,
+    .checkout-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #ffa500; /* Laranja */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+      box-sizing: border-box; /* Para incluir o padding no tamanho total */
+      font-size: 16px;
+    }
+
+    .back-button:hover,
+    .checkout-button:hover {
+      background-color: #ff8c00; /* Laranja mais escuro */
+    }
+
+    .checkout-button {
+      background-color: #8b0000; /* Vermelho queimado */
+    }
+
+    .checkout-button:hover {
+      background-color: #b22222; /* Vermelho mais escuro */
+    }
+
+    .address-selection {
+      margin-bottom: 10px;
+    }

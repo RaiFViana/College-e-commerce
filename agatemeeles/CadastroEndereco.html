@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Styles/CadastroEndereco.css">
+  <title>Cadastro de Endereço</title>
+   <script>
+    function buscarEndereco() {
+      var cep = document.getElementById("cep").value;
+      if (cep.length === 8) {
+        var url = "https://viacep.com.br/ws/" + cep + "/json/";
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("logradouro").value = data.logradouro;
+            document.getElementById("bairro").value = data.bairro;
+            document.getElementById("cidade").value = data.localidade;
+            document.getElementById("estado").value = data.uf;
+          })
+          .catch(error => {
+            console.log("Ocorreu um erro ao buscar o endereço:", error);
+          });
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Cadastro de Endereço</h2>
+    <form action="processar_cadastro_endereco.php" method="post">
+      <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" required>
+      <input type="number" name="numero" placeholder="Número" required>
+      <input type="text" name="complemento" placeholder="Complemento">
+      <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+      <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+      <input type="text" name="estado" id="estado" placeholder="Estado" required>
+      <input type="text" name="cep" id="cep" placeholder="CEP" required maxlength="8" 
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+        onblur="buscarEndereco()">
+      <textarea name="observacoes" placeholder="Observações"></textarea>
+      <input type="submit" value="Cadastrar">
+    </form>
+  </div>
+</body>
+</html>

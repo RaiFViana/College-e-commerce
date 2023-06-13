@@ -1,0 +1,67 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #8b0000; /* Vermelho escuro */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #8b796f; /* Vermelho queimado */
+}
+
+table th {
+    background-color: #f5f5dc; /* Bege */
+    color: #8b0000; /* Vermelho escuro */
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #ffa500; /* Laranja */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.pagination a.active {
+    background-color: #8b0000; /* Vermelho escuro */
+}
+
+.back-button {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #8b0000; /* Vermelho queimado */
+    background-color: #ffa500; /* Laranja */
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+}
+
+.filter-form {
+    margin-bottom: 20px;
+}
