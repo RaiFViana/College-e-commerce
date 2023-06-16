@@ -15,26 +15,13 @@
     // Inicie a sessão
     session_start();
 
-    // Verifique se o usuário está logado
-    $usuarioLogado = false; // Valor padrão quando o usuário não está logado
 
-    if (isset($_SESSION['usuario'])) {
-        // O usuário está logado
-        $usuarioLogado = true;
-    }
     ?>
-
     <header>
         <div class="title">Primitive</div>
         <img src="logo.png" alt="Logo da loja" class="logo">
-        <?php
-        if ($usuarioLogado = false) {
-            echo '<a href="login.php" class="back-button">&larr; Login</a>';
-        } else {
-            echo '<a href="meusdados.php" class="back-button">&larr; Meus Dados</a>';
-        }
-        
-        ?>
+        <a href="login.php" class="back-button">&larr; Login</a>
+        <a href="meusdados.php" class="back-button">&larr; Meus Dados</a>
     </header>
 
     <div class="container">
@@ -71,7 +58,7 @@
                 echo '<img src="' . $produto_imagem . '" alt="' . $produto_nome . '">';
                 echo '<h3>' . $produto_nome . '</h3>';
                 echo '<div class="buttons">';
-                echo '<button>Adicionar ao Carrinho</button>';
+                echo '<a href="carrinho.php?produto_id=Adicionar ao Carrinho</a>'; // trocar aqui
                 echo '<button><a href="detalhes.php?id=' . $produto_id . '">Ver Detalhes</a></button>';
                 echo '</div>';
                 echo '</div>';
